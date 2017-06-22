@@ -3,7 +3,7 @@ package Stack;
 public class CheckForBrackets 
 {
 	public static void main(String[] args) {
-		String s = "{a[b]}";
+		String s = "{a[b]}}";
 		
 		StackOfArray sa = new StackOfArray(s.length());
 		
