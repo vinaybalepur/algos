@@ -15,13 +15,15 @@ public class Link
 	 * There should be a reference back to the same class. This is called as self reference
 	 */
 	
-	int linkValue;
-	Link next;
+	int key;
+	double value;
+	public Link next;
 	
 	/** Here will initialize next as null and also insert the value in the current container */
-	public Link(int i)
+	public Link(int key, double value)
 	{
-		this.linkValue = i;
+		this.key = key;
+		this.value = value;
 		next = null;
 	}
 	
@@ -30,7 +32,7 @@ public class Link
 	public void displayValueInLinkContainer()
 	{
 		
-		System.out.println("Value in container is " + linkValue);
+		System.out.println("The key is " + key +" . The value is " + value);
 		
 	}
 }

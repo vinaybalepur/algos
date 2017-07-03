@@ -1,30 +1,45 @@
 package linkedLists;
 
-/**
- * This class creates the link list which houses the values added to the linked list and also the details of the link
- * link. Initially we set the first link as null. This means the linked list is  empty.
- * @author vinay
- *
- */
-public class LinkList 
+public class LastFirst 
 {
 	
 	Link first;
+	Link last;
 	
-	public LinkList()
+	public LastFirst()
 	{
 		first = null;
+		last = null;
 	}
 	
 	/* Every time  a new value is inserted into the linked list a new  link (Link) is created. Remember
 	 * initially the first link was empty(null). When the new value is added then the link will have this new
 	 * value and the null value should be moved to the link link.*/
 	
-	public void insert(int key, double value)
+	public void insertFirst(int key, double value)
 	{
 		Link newLink = new Link(key, value);
 		newLink.next = first;
 		first = newLink;
+	}
+	
+	public void insertLast(int key, double value)
+	{
+		Link newLink = new  Link(key,value);
+		Link current = first;
+		if(first == null)
+		{
+			first = newLink;
+		}else
+		{
+			while(current.next !=null)
+			{
+				current = current.next;
+			}
+			current.next = newLink;
+			newLink.next = null;
+		}
+		
 	}
 	
 	/* In this method we remove the first link object and move the pointer to the link link object.
@@ -90,7 +105,7 @@ public class LinkList
 	
 	public boolean isEmpty()
 	{
-		return (first==null);
+		return first==null;
 	}
 	
 	public void display()
@@ -100,6 +115,24 @@ public class LinkList
 		{
 			current.displayValueInLinkContainer();
 			current = current.next;
+		}
+	}
+	
+	public void addValueInbetween(int existingKey, int newKey, double newValue)
+	{
+		Link current = first;
+		Link previous = null;
+		while(current.next != null)
+		{
+			if(current.key == existingKey)
+			{
+				Link newLink = new  Link(newKey, newValue);
+				previous.next = newLink;
+				newLink.next = current;
+			}
+			previous = current;
+			current = current.next;
+			
 		}
 	}
 
