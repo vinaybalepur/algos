@@ -5,7 +5,7 @@ public class SelectionSort
 	
 	public static void main(String[] args) 
 	{
-		int[] x = {3,5,1,0,4,2};
+		int[] x = {10,5,7,0,1,-5,50};
 		
 		int indexPointer, temp;
 		

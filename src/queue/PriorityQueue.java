@@ -1,5 +1,13 @@
 package queue;
 
+/*
+ * Priority queue is same as queue, with one major difference. For the values entered, there will be a priority
+ * assigned. The highest priority will be moved to the  top and lowest will be at the bottom of the queue. So 
+ * when inserting values into the queue, sort the  values based on priority. Sorting will be ascending where
+ * the lowest number will be at the top and highest number will be at the bottom. Since there is ordering required,
+ * insertion of value takes more time. Reading and deleting will not take extra time since the queue is index based.
+ */
+
 public class PriorityQueue 
 {
 	int front =0;

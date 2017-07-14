@@ -6,12 +6,12 @@ public class BinaySearch
 	public static void main(String[] args) {
 		int arr[] = new int[10];
 		
-		for(int i=0;i<10;i++)
+		for(int i=0;i<9;i++)
 		{
 			arr[i] = i;
 		}
 		
-		int valueToSearch = 9;
+		int valueToSearch = 90;
 		
 		int  lowerBound =0;
 		int  upperBound=arr.length-1;
@@ -20,10 +20,9 @@ public class BinaySearch
 		while(true)
 		{
 			int midPoint = (lowerBound + upperBound)/2;
-			counter = counter +1;
+			
 			if(arr[midPoint]==valueToSearch)
 			{
-				System.out.println(counter);
 				System.out.println("value found at position " + arr[midPoint]);
 				break;
 			}else if(lowerBound > upperBound)

@@ -4,7 +4,7 @@ public class InsertionSort
 {
 	public static void main(String[] args) 
 	{
-		int a[] = {3,4,1,5,2};
+		int a[] = {3,4,1,5,2,-5,3};
 		int  key,j, temp;
 		
 		for(int i=1;i<a.length;i++)
