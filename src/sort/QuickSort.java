@@ -7,32 +7,39 @@ public class QuickSort
 
 	static int input[];
 	public static void main(String[] args) {
-		int a[] = {17,41,5,22,54,6,29,3,13};
+//		int a[] = {27,5,35,6,0,1,40,15};
 
-		input = new int[4];
-		input[0]= 4;
-		input[1]= 0;
-		input[2]= 2;
-		input[3]= 1;
+		input = new int[8];
+		input[0]= 27;
+		input[1]= 5;
+		input[2]= 35;
+		input[3]= 6;
+		input[4]= 0;
+		input[5]= 1;
+		input[6]= 40;
+		input[7]= 15;
 		quickSort(0, input.length-1);
 //		partition(a, 0, input.length-1);
-		System.out.println(Arrays.toString(input));
+//		System.out.println(Arrays.toString(input));
 		
 		
 	}
+	static int couter = 1;
 
 	static void quickSort(int low, int high) 
 	{
+		System.out.println(Arrays.toString(input));
 	int i = low; int j = high; 
 	// pivot is middle index 
 	int pivot = input[low + (high - low) / 2]; 
-	// Divide into two arrays 
+	System.out.println("Counter " + couter++  + " " + "Pivot " + pivot );
+	
+	// Partition the array 
 	while (i <= j) 
 	{ 
-		/** *In each iteration, we will identify 
+		/*** In each iteration, we will identify 
 		 * a number from left side which is greater then the pivot value, and a number from right side
-		 *  which is less then the pivot value. 
-		Once search is complete, we can swap both numbers. */ 
+		 * which is less then the pivot value. Once search is complete, we can swap both numbers. */ 
 		while (input[i] < pivot) 
 		{ 
 			i++; 
@@ -41,23 +48,29 @@ public class QuickSort
 		{ 
 			j--; 
 		} 
+		
 		if (i <= j) 
 		{
+			
 			swap(i, j); 
 			// move index to next position on both sides
 			i++; 
 			j--; 
+			System.out.println(" -- i " + i + " -- j " + j);
 		} 
 
-		// calls quickSort() method recursively
-		if(low<j)
-
+		// Recursively sort lower half
+		if(j>low)
 		{
+			
 			quickSort(low, j);
-		}if(i<high)
+		}
+		// Recursively sort upper half
+		if(i<high)
 		{
 			quickSort(i, high);
 		}
+		
 	}
 
 	}
@@ -67,39 +80,6 @@ public class QuickSort
 		int temp = input[i];
 		input[i] = input[j]; 
 		input[j] = temp; 
-	}
-
-	
-
-	static int[] partition(int a[], int i, int j)
-	{
-		int pivot = a.length-1;
-				int leftPointer = i;
-				int rigthPointer = j;
-
-		while(true)
-		{
-			if(a[leftPointer]>a[pivot] & a[rigthPointer]<a[pivot])
-			{
-				int temp = a[leftPointer];
-				a[leftPointer] = a[rigthPointer];
-				a[rigthPointer] = temp;
-				leftPointer = leftPointer+1;
-				rigthPointer = rigthPointer-1;
-			}else if(rigthPointer==leftPointer)
-			{
-				int temp = a[pivot];
-				a[pivot] = a[leftPointer+1];
-				a[leftPointer+1] = temp;
-				System.out.println(a.toString());
-				break;
-			}else
-			{
-				rigthPointer = rigthPointer-1;
-
-			}
-		}
-		return partition(a, i, j);
 	}
 
 }
