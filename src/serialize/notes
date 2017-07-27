@@ -1,0 +1,30 @@
+Serialization allows us to convert object to stream of data. This is useful in transferring data 
+over the Internet. To make a class serializable we need to implement java.io.Serializable interface.
+This is a marker interface meaning there are no methods in the interface. Object output stream writes
+the serialized object into a file and we can read data from this file.
+
+* Serialization in Is a relation
+   If the parent class extends serializable interface, by default the child classes also get the serializable 
+   properties
+
+* Serialization in has a relation
+   In case of has a relation, each class has to be serialized individually. If any of the class is not serialized,
+   then we cannot serialize the class where the other class object has been created.
+ 
+* Serialization in case of static members
+   Static members of the class  will not be serialized.
+
+* Serialization version ID. 
+* This is a private static final long value.
+* This has to be unique value.
+* Eclipse generates its own default value which is complex and may not be the same across 
+  all the OS.
+* Generate your own version ID.
+* If the version ID during serialilzation does not match with version id in deserialization,
+  then wee will have InvalidClassException.
+* To understand this create  serialization id in Employee class and run serializaiton and desialization classes. This
+  should work fine.
+* Remove the version id and again run serialization and deserialization classes. This also will work fine.
+* Add an extra vairable or method to employee class and run serialization and deserialzation classes. Now we will
+  get Invalid class exception as the serial version id mismatches and also there is a change in the class.
+ 
