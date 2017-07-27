@@ -35,6 +35,7 @@ public class Deserialize
 		System.out.println(e.getAge());
 		System.out.println(e.getName());
 		Employee.getMessage();
+		e.test1();
 		
 	}
 

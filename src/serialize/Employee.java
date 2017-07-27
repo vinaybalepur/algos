@@ -31,5 +31,14 @@ public class Employee implements Serializable
 	{
 		System.out.println("Getting message");
 	}
+	
+	private void test() {
+		System.out.println( "Inside test");
+	}
+	
+	void test1()
+	{
+		System.out.println( "Inside test1");
+	}
 
 }

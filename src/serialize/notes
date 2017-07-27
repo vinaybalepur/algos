@@ -14,6 +14,10 @@ the serialized object into a file and we can read data from this file.
 * Serialization in case of static members
    Static members of the class  will not be serialized.
 
+* Serialization of private members
+   Since private members are not visible to any other class, we cannot use them after deserialization. i.e in the
+   class where we are deserailizing the serialized class, we cannot use the private member.
+
 * Serialization version ID. 
 * This is a private static final long value.
 * This has to be unique value.
