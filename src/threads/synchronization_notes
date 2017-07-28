@@ -1,0 +1,10 @@
+join() method
+   This method allows one thread to complete the execution before starting the next thread. This will throw interrupted exception. In RunSynchronize
+class comment the join block and run the code. The output will be habazord. If we uncomment and run the code, then till thread t1 completes,
+t2 will not start.
+ 
+yield() method
+   This method temporally stops the execution of a thread and allows other threads to execute. Any of the other
+ threads can get executed and we  cannot control it. In the Yield class, comment the yeild statement and run
+ the RunYeild class. This will print the before and after yeilding will mixed up values. Uncomment and run the 
+ class, then before yield will be one thread and after yeidl will be another thread.

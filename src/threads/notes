@@ -1,0 +1,33 @@
+* Threads allows us to execute programs parallely.
+* Use threads for unrelated parts of the program i.e. there should not be dependency on execution of one
+  part of the program to the other part.
+* There will always one thread which will control all the other threads which is the main thread. All other 
+  threads will be spanned from this thread and only after this thread starts other threads can be started.
+* Threads can be achieved either by extending Thread class or implementing Runnable interface.
+
+Runnable interface - 
+* Threads can be created by implementing this interface. 
+* We need to override the run method of this interface.
+* The run method is the one which will be invoked for thread execution. So  implement the code to be executed inside
+  run method.
+* Since we implement Runnable interface, we can upcast the implementing class to Runnable level and then invoke this object 
+  using Thread class
+
+Thread Class -
+* This class can be extended to create a thread. This inturn implements Runnable interface.
+* Since runnable interface makes it mandatory to implement run method, Thread class by default would have implemented
+  run method. If we create and execute the thread class without providing implementation to run method, then the
+  default run method would be invoked.
+* If we override the default run method, then our code would be executed.
+* Since we are extending Thread class we can use start method directly to start the Thread.
+
+Difference in implementing Runnable and Thread
+* Since we need to extend Thread class we will not be able to extend any other class. So go for Runnable.
+* In OOPs extending a class would mean adding new functionality to the base class. Since there is  nothing new that would be added when we extend
+  Thread class it would break OOPs conventions.
+* Other executors in Java require Runnable object and not Thread class and they have worker threads which executes this runnable interface.
+* When we extend thread class we get an overhead of getting all other methods of Thread class and not just run method.
+* By implementing Runnable interface multiple Threads can share the same runnable object, which is not possible in extending Thread class.
+* There is loose coupling when we implement Runnable Interface, i.e. the class which implements the interface has the task that needs to be
+  executed, where as the Thread class executes the class where runnable interface is implemented.
+  
