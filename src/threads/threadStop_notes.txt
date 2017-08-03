@@ -1,0 +1,15 @@
+In threads we should not use stop() method, for the simple reason, if the thread is killed any object associated with
+the thread is  also killed immedietly. If there are references to the object that was killed, then tat part of the
+code will be affected.
+
+To overcome this, we need to kill the thread based on certain parameters, only when the execution is completed and
+we no more need the thread to be running. To achieve this use a flag and  change the value of the flag once the 
+thread usage has been completed.
+
+Inside Analysis class we have run and stopThread method. If we want the thread to stop we need to call stopThread
+method, which changes the value of the variable stop to true. The run method only runs until the  value of the
+stop is false. stopThread method is declared inside the interface ThreadStopper.
+
+The class WatchDog has a constructor, which takes the runnable object, threadStopper object and mili seconds as argument. 
+This constructor starts the thread using the runnable object and waits for the mili seconds specified. Once the wait is
+over, stopThread is invoked. This changes the variable stop to true and the thread stops the execution. 
