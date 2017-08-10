@@ -1,0 +1,5 @@
+* If we want to control the access of objects by multiple threads, then we need to synchronize the object.
+* Synchronized key word can be used against methods and classes and not against variables.
+* In the RunTables class, the call to printTables method is made.
+* If we do not use synchronize key word for printTables, then the tables would be printed randomly.
+* Since synchronize keyword is used, the access to the method is restricted and we get uniform output.
