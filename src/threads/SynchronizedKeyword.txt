@@ -3,3 +3,14 @@
 * In the RunTables class, the call to printTables method is made.
 * If we do not use synchronize key word for printTables, then the tables would be printed randomly.
 * Since synchronize keyword is used, the access to the method is restricted and we get uniform output.
+
+Synchronized block
+* If we want to synchronize a part of the method, then we can use synchronized keyword inside the method.
+* This synchronizes only that part of code which is under synchronized block.
+synchronized (this) { // code to by synchronized }
+
+Static method synchronized keyword
+* If we use synchronized keyword against a static method, the entire class is locked by the thread.
+* In case of non static synchronization, the lock is on the class object and not the entire class.
+* This essentially means, in static locking, none of the other methods are executed until static method has completed
+  execution.
