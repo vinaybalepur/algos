@@ -1,0 +1,6 @@
+* These are supportive threads which are used to run actual threads.
+* If the actual thread completes execution, then deamon thread is killed.
+* Exs of deamon threads are GC threads, finalizer etc.
+* These are low priority threads.
+* We can set any thread as daemon thread by setting the flag as true in setDaemon(boolean flag)
+* We can check if a thread is deamon by using isDaemon.

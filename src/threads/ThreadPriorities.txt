@@ -1,0 +1,7 @@
+* Priorities defines which thread will be picked up for running.
+* The values are integer and between 1 to 10. 1 is the lowest and 10 is the highest.
+* The thread with higher priority will have higher probability of executing.
+* The main thread will always have priority of 5.
+* We can alter the priority of main thread, but there will not be any change in the execution of the code.
+* In linux priorities may not work as expected, where highest priority will get executed before lower priorities.
+* One can set and get priorities using Thread.setPriority(int i) and Thread.getPriority().
