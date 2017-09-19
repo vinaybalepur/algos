@@ -1,0 +1,12 @@
+* Garbage collection is used to remove unused objects.
+* Only objects in java can be garbage collected and not primitive variables.
+* Ways of garbage collection include setting an object to null, assigning one object to another.
+		GarbageCollection g1 = new GarbageCollection();
+		GarbageCollection g2 = new GarbageCollection();
+		GarbageCollection g3 = new GarbageCollection();
+		g1 = null;
+		g2 = null;
+		g3= g2;
+* The gc method of System class can be used for garbage collection.
+* The finalize method of Object class will always be invoked before garbage collection runs
+* There is no guarantee that the gc method and finalize method will be invoked when ever we call garbage collection.
