@@ -1,0 +1,13 @@
+* These can be used to bring in inter thread communication.
+* These methods are defined in object class and not in thread class. The reason is these work on objects and
+  not threads.
+* If one thread wants to signal to another thread to wait for something to happen and the other thread
+  wants to notify back that something has happened, then we can use these combinations.
+* The method which has to wait for something to happen should invoke wait() method. This throws interepted exception.
+* The method which has to notify something has happened should invoke notify method.
+* These methods should  have synchronized key word else we get illegalStateException.
+* In the banking class example, we cannot withdraw until we have sufficient balance.
+* The withdraw if invoked first signals there is not enough balance and waits for the balance to be updated.
+* The  deposit will then get invoked and deposit the money and notify the same.
+* The withdraw then completes the action of withdrawing  money.
+* Both withdraw and deposit should be run as two different threads.
