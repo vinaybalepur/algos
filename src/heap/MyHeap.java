@@ -12,7 +12,7 @@ public class MyHeap<T extends Comparable<T>>
 	public MyHeap()
 	{
 		items = new ArrayList<>();
-	}
+	} 
 	
 	/* Insert the value and call shift up method. This method shifts the inserted value to the correct position*/
 	public void insert(T v)

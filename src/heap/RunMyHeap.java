@@ -11,7 +11,7 @@ public class RunMyHeap implements Comparable<Integer>
 		heap.insert(4);
 		heap.insert(5);
 		heap.insert(6);
-//		heap.insert(7);
+//		heap.insert(7); 
 		System.out.println(heap.toString());
 		System.out.println(heap.delete());
 		System.out.println( heap.toString());

@@ -18,4 +18,4 @@
   root position.
 * Since 5 is not at the correct position, as the root node should always have the highest value, 5 gets shifted down. So to shift down, first compare
   the child nodes, 14 and 13. Which ever is highest push that to the top and push the root node down. This goes on until root node actually gets it's
-  final position.
+  final position. 
