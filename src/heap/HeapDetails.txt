@@ -1,0 +1,21 @@
+* Heap data structure is a type of Tree-based  data structure. If p is the parent node, then c, the child node should
+  be lesser than the  parent node.
+* There are two types of heaps, max heap and min heap.
+* In max heap the parent node is always greater than or equal to the child node and the highest value is the root
+  node.
+* In min heap the parent node is always lesser than the child node and the min value if the root node.  
+
+              15
+           14    13
+         10  9  6   5 
+         
+* In the above example, the root node is 15 and this will be the highest value.
+* If we add a number it will get added under 10. Then it compares with the parent, i.e. 10, and if it is greater then it move up. Again it compares 
+  with the parent i.e. 14 and if it is greater it moves up and  this  continues until we reach root node which has 15. This is called shit up.
+
+* Leaf of the tree is the data which does not have any more child nodes. In the above example, 10,9,6,5 are the leaf nodes.
+* If we delete a number, then the root node gets deleted and the right most value of the leaf takes root position. In the above example, 5 takes 
+  root position.
+* Since 5 is not at the correct position, as the root node should always have the highest value, 5 gets shifted down. So to shift down, first compare
+  the child nodes, 14 and 13. Which ever is highest push that to the top and push the root node down. This goes on until root node actually gets it's
+  final position.
