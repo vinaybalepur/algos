@@ -81,7 +81,7 @@ public class MyHeap<T extends Comparable<T>>
 	{
 		int k = 0; // pointer
 		int leftChildIndex = (2*k) +1; // left child
-		int rightChildIndex = (2*k) + 2; // right child
+		int rightChildIndex = leftChildIndex+ 1; // right child
 		int highestNoIndex = 0; // used to get the index of the child value based on if it is higher. So in index 2 if value is 10 and index 3
 		                           // value is 20, then highestNoIndex will be 3.   
 		T valueInRightNode; // Value of the rightChildNode
@@ -93,43 +93,19 @@ public class MyHeap<T extends Comparable<T>>
 		 */
 		while(rightChildIndex<lastNode)
 		{
-			leftChildIndex = (2*k) + 1;
-			rightChildIndex = (2*k)+2;
 			
-			/* This is critical to break the loop as soon as we find out there are no more left child nodes. This means
-			 * there are no more comparisons that can be made.
-			 */
-			if(!(leftChildIndex>lastNode))
-			{
-				valueInLeftNode = items.get(leftChildIndex);
-			}else
-			{
-				break;
-			}
 			
-			/** Getting the value of right child node based on the location of the right child node. If the locaiton is greater to or equal
-			 * than the list size then it means there are no more right children and left child value has to be considered as the 
-			 * right child value. 
-			 */
-			if(rightChildIndex >= items.size())
-			{
-				valueInRightNode = items.get(leftChildIndex);
-				rightChildIndex = items.size()-1;
-			}else
-			{
-				valueInRightNode = items.get(rightChildIndex);
-			}
+			valueInLeftNode = items.get(leftChildIndex);
 			
+			valueInRightNode = items.get(rightChildIndex);
 			
 			/**
-			 * This does the comparison to get the index of the highestValue
+			 * This does the comparison to get the index of the highest child Value
 			 */
+			highestNoIndex = rightChildIndex;
 			if(valueInLeftNode.compareTo(valueInRightNode)>0)
 			{
 				highestNoIndex = leftChildIndex;
-			}else
-			{
-				highestNoIndex = rightChildIndex;
 			}
 			
 			/** Simple swap to swap values based on the higher data*/
@@ -144,7 +120,8 @@ public class MyHeap<T extends Comparable<T>>
 				break;
 			}
 			
-			
+			leftChildIndex = (2*k) + 1;
+			rightChildIndex = leftChildIndex+1;
 		}
 	}
 	 

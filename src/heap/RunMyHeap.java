@@ -15,7 +15,13 @@ public class RunMyHeap implements Comparable<Integer>
 		System.out.println(heap.toString());
 		System.out.println(heap.delete());
 		System.out.println( heap.toString());
-		System.out.println(new RunMyHeap().compareTo(20));
+		System.out.println(heap.delete());
+		System.out.println( heap.toString());
+		System.out.println(heap.delete());
+		System.out.println( heap.toString());
+		heap.insert(6);
+		System.out.println(heap.toString());
+//		System.out.println(new RunMyHeap().compareTo(20));
 	}
 
 	@Override
