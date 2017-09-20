@@ -1,0 +1,6 @@
+* This is an Interface which can be used to compare any type of data.
+* This has only one method compareTo.
+* This method takes an argument and compares it with the passed data.
+* If A>B then this returns -1.
+* If B>A this returns 1
+* If A=B then it returns 0.
