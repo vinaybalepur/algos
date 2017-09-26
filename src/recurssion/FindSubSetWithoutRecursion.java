@@ -1,21 +1,25 @@
 package recurssion;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class FindSubSetWithoutRecursion 
 {
-	/** Total number of combinations formula is n^2 -1 */
+	/** Total number of combinations formula is 2^lenght -1 */
 	public static void main(String[] args) throws CloneNotSupportedException 
 	{
 		
 		String s = "abcd";
-		int in[] = {1,2,3,4}; 
-		int n = s.length()*s.length()-1;
+//		int in[] = {1,2,3,4}; 
+//		int n = s.length()*s.length()-1;
+		int n = (int) (Math.pow(2, s.length())-1);
 		
 		
 		for(int i=n;i>0;i--)
 		{
 			String binary = getBinayOfANumber(i,s);
+//			System.out.println(binary);
 			getStringCombo(binary, s);
 //			getListCombo(binary, in);
 		}
@@ -36,9 +40,10 @@ public class FindSubSetWithoutRecursion
 			System.out.println(combo);
 		}
 	}
-	
+	static Set set = new HashSet<>();
 	static void getStringCombo(String binary, String s)
 	{
+		
 		if(binary != null) {
 			String combo="";
 			for(int j=0;j<binary.length();j++)
@@ -48,13 +53,17 @@ public class FindSubSetWithoutRecursion
 					combo = combo+s.charAt(j);
 				}
 			}
+			set.add(combo);
 			System.out.println(combo);
 		}
+		
+		System.out.println( set.size());
+		
 	}
 	
 	static String getBinayOfANumber(int n, String s)
 	{
-		// To get the binary digit of a number divide the number by 2. Again divide the reminder by 2. Keep doing this until reminder reaches to 
+		// To get the binary digit of a number divide the number by 2. Again divide the quotient by 2. Keep doing this until reminder reaches to 
 		// 1 or 0.
 		/**
 		 * when n = 5
@@ -63,33 +72,25 @@ public class FindSubSetWithoutRecursion
 		 * 2|2|1
 		 * 2|1|0
 		 */
-		String str = "";
+		String binary = "";
 		
 		while(n>=1)
 		{
-			// n is the reminder and x is the quotient
+			// x is the reminder and n is the quotient
 			int x = n%2;
-			str = x+str;
+			binary = x+binary;
 			n=n/2;
 		}
 		/* The while loop adds 0 to the beginning of the created binary number. This ensures the length of the  binary string is always equal to the 
 		 * Length of the actual string.
 		 */
-		while(str.length() <s.length())
+		while(binary.length() <s.length())
 		{
-			str = "0"+str;
+			binary = "0"+binary;
 		}
 		
-		/** 
-		 * There is a null check because if the length of the string is 3 then total combinations would be 7. But the combinations formula
-		 * give the total combinations as 8. The binary of 8 is 1000. This is longer than the string length and hence it is invalid. 
-		 * So return null if the length of the binary string  is greater than actual String length.
-		 */
-		if(str.length() > s.length())
-		{
-			return null;
-		}
-		return str;
+		
+		return binary;
 	}
 	
 
