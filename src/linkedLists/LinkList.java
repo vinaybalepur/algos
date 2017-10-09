@@ -102,5 +102,41 @@ public class LinkList
 			current = current.next;
 		}
 	}
+	
+	/** This takes a link list as an argument and converts the list to a circular link list
+	 * by pointing the last node to the first node*/
+	public TestLinkList createCircularLinkList(TestLinkList ll)
+	{
+		TestLink current = ll.first;
+		while(current.next !=null)
+		{
+			current = current.next;
+		}
+		current.next = ll.first;
+		return ll;
+	}
+	
+	/** This takes circular link list as an argument and breaks the circle at the last node.
+	 * There are two pointers head and tail. Both point to the first node. The tail pointer
+	 * does not move and head pointer moves starting from head node. Once the head reaches tail,
+	 * then then head element points to null and returns the linkedlist object.
+	 * @param ll
+	 * @return
+	 */
+	public TestLinkList breakCircularLinkList(TestLinkList ll)
+	{
+		
+		TestLink head = ll.first;
+		TestLink tail = head;
+		while(head.next != tail)
+		{
+			head = head.next;
+		}
+		head.next = null;
+		
+		return ll;
+	}
+	
+	
 
 }
