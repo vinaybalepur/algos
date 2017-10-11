@@ -1,0 +1,21 @@
+* To disable a test case, use enabled = false flag in @Test annotation.
+* To set time for test execution use timeout and set the  time in milliseconds
+* Expected exceptions allow us to define the kind of exceptions that can be expected in the test case. This is an
+  array of exception classes and if the test case fails due to the specified exception, it is passed. If the test case
+  does not throw the exception, then the test is failed.
+* Parametrizing the test case can be achieved by using data provider annotation, which can return an Array of any
+  kind of value. We can return a single dimension array or two dimensional array and use the values in the test case. 
+* Parametrization can also be achieved using parameter tags in testng.xml Ex. <parameter name = "browser" value = "firefox"/>
+  In the test use @Parameters("browser"). Pass this value as an argument to the test method. If we want to make 
+  any value as optional then use @Optional("chrome") in the method signature. This means that if the parameter browser is not
+  found in xml, then the optional value chrome will be sent to the test case
+* Invocation count and Thread pool size are helpful if we want to do performance testing using testng.
+  Invocation count specifies the number of times the test has to be run 
+  Thread pool size specifies the number of threads on which the test will run on. 
+  If the invocation count is 50 and thread pool size is 50, then the test case will run concurrently 50 times on different threads.
+* Grouping of test cases can be done by using groups parameter in test annotation. This takes String array argument.
+  We can specify the group names and can run a specific group which may be in multiple classes using testng.xml.
+  To find out how to run check smokegroup or regressiongroup xml files.
+* Depends on can be used to ensure the independent method runs before the depending method. dependsOnMethod/groups
+  takes a String array of methods as an argument and the dependent method does not get executed until independent
+  method is executed.
