@@ -1,0 +1,27 @@
+* git branch branchName - Creates a branch locally
+* git branch - Gives the names of the local branches
+* git branch -a - Gives the names of all the branches, both local and remote.
+* git push -u origin branchName - Pushes the local branch to remote repo.
+* git checkout -b branchName - Creates a branch if it is not  existing and switches to the branch
+* git checkout -b localBranchName origin/remoteBranchName - Clones a remote branch into the specified branch
+* git add fileName - Adds the file to local repo
+* git add -A - Adds all the unstaged file to localrepo
+
+* git push origin branchName, git push - Pushes the local staged changes to remote repo.
+* git pull - Pulls the latest code to the local repo
+* git pull origin branchName - Pulls the latest code from the specified branch
+
+*** Difference between git pull and git fetch - git pull pulls the code from remote branch and merges with the local repo branch, thus bringing
+    both remote code and local code to remote code level. If there are any conflicts we need to resolve them manually. git fetch simply fetches   the data from remote repo and does not merge the code with local repo. We can do a git diff to find out the diffrences and fix the diff and then
+do a git pull. This will avoid merge conflicts.
+
+* git stash - Stashes all the code in unwanted directory
+
+Merging branches in git.
+git checkout master
+git pull origin master
+git diff master test
+git merge test
+git push origin master
+
+test is a branch which may be both in remote and local or only in local. First checkout the master branch. This will switch from current branch to master in local system. Then do a git diff between master and test branch. If there are any diferrences then it will show up here. Resolve the differences and merge test with master. Then push the master branch. This will merge both test and master branch code and push it to remote.
