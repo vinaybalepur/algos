@@ -2,7 +2,6 @@ package  comparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /** This can be used to sort an array list. To sort it in reverse order based on votes. The logic is anyone with
@@ -11,7 +10,9 @@ import java.util.List;
  * takes two arguments, obj1 and obj2. If u want to sort data based on some value lets say votes, then, in the 
  * compare method compare the votes. If obj1 votes is greater than obj2, then return -1 else return 1.
  * If there is a tie, then compare the names of the candidate and return the candidate whose name is alphabetically
- * sorted.
+ * sorted. The advantage of Comparator interface is, we can implement this interface in any class and pass the class
+ * object as an argument for sort method. In this example, we are passing compararevotes object to sort method and in
+ * comparevotes class implements comaparator interface.
  * 
  * @author vinay
  *
@@ -28,7 +29,7 @@ public class UnderstandingComparable
 		a.add(new Votes(50, "Xanderd"));
 		
 		
-		Collections.sort(a, new Votes());
+		Collections.sort(a, new CompareVotes());
 		
 		System.out.println("-------------------");
 		for(Votes i :a)
@@ -41,13 +42,13 @@ public class UnderstandingComparable
 }
 
 
-class Votes implements Comparator<Votes>
+class Votes 
 {
 
 	int votes;
 	String name;
 	
-	public Votes() {};
+	
 	
 	public Votes(int votes, String name)
 	{
@@ -55,33 +56,5 @@ class Votes implements Comparator<Votes>
 		this.name = name;
 	}
 	
-
-	public int compare(Votes o1, Votes o2) 
-	{
-//		if(o1.votes == o2.votes)
-//		{
-//			return  (o1.name.compareTo(o2.name));
-//		}else if(o1.votes > o2.votes)
-//		{
-//			return -1;
-//		}else
-//		{
-//			return 1;
-//		}
-		
-		if(o1.votes == o2.votes)
-		{
-			return o1.name.compareTo(o2.name);
-		}
-		else if(o1.votes>o2.votes)
-		{
-			return -1;
-		}else
-		{
-			return 1;
-		}
-	}
-
-
 	
 }
