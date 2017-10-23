@@ -4,6 +4,7 @@
 * There will always one thread which will control all the other threads which is the main thread. All other 
   threads will be spanned from this thread and only after this thread starts other threads can be started.
 * Threads can be achieved either by extending Thread class or implementing Runnable interface.
+* If we run the same thread twice i.e. before the thread completes the execution, then we get java.lang.IllegalThreadStateException
 
 Runnable interface - 
 * Threads can be created by implementing this interface. 

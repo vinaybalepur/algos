@@ -1,6 +1,7 @@
 * These can be used to bring in inter thread communication.
 * These methods are defined in object class and not in thread class. The reason is these work on objects and
   not threads.
+* Once notify is invoked there is no gurentee as to which other thread will be picked up for execution.  
 * If one thread wants to signal to another thread to wait for something to happen and the other thread
   wants to notify back that something has happened, then we can use these combinations.
 * The method which has to wait for something to happen should invoke wait() method. This throws interepted exception.
