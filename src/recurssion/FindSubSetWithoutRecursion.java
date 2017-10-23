@@ -1,16 +1,17 @@
 package recurssion;
 
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class FindSubSetWithoutRecursion 
 {
+	static Set<String> set = new TreeSet<String>();
 	/** Total number of combinations formula is 2^lenght -1 */
+	
 	public static void main(String[] args) throws CloneNotSupportedException 
 	{
 		
-		String s = "abcd";
+		String s = "dbac";
 //		int in[] = {1,2,3,4}; 
 //		int n = s.length()*s.length()-1;
 		int n = (int) (Math.pow(2, s.length())-1);
@@ -23,6 +24,9 @@ public class FindSubSetWithoutRecursion
 			getStringCombo(binary, s);
 //			getListCombo(binary, in);
 		}
+		
+		
+		System.out.println(set);
 		
 	}
 	
@@ -40,7 +44,7 @@ public class FindSubSetWithoutRecursion
 			System.out.println(combo);
 		}
 	}
-	static Set set = new HashSet<>();
+	
 	static void getStringCombo(String binary, String s)
 	{
 		
@@ -54,10 +58,10 @@ public class FindSubSetWithoutRecursion
 				}
 			}
 			set.add(combo);
-			System.out.println(combo);
+//			System.out.println(combo);
 		}
 		
-		System.out.println( set.size());
+//		System.out.println( set.size());
 		
 	}
 	

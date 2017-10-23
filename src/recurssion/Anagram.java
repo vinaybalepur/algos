@@ -31,7 +31,8 @@ public class Anagram
 	{
 		if(word.length() <=1)
 		{
-			System.out.println(oldWord + word);
+//			System.out.println("oldWord " + oldWord + " newWord " +word);
+			System.out.println(oldWord+word );
 		}else
 		{
 			for(int i=0;i<word.length();i++)

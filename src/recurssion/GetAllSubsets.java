@@ -23,13 +23,17 @@ public class GetAllSubsets
 	
 	static void subSet(String start, String end)
 	{
+
 		if(end.length()==0)
 		{
 			System.out.println(start);
 		}else
 		{
+			
 			subSet(start+end.charAt(0), end.substring(1));
 			subSet(start, end.substring(1));
+			
 		}
+		
 	}
 }
