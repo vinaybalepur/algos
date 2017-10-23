@@ -23,6 +23,19 @@
   with multiple sets of data, then we can use @factory annotation and pass the required data. This annotation returns
   an object array of the classes that has to be run as part of the execution. 
   Ex. return new Object[] {new MyFactory(), new FactoryWithArgs(1), new FactoryWithArgs(2)};
-  The above factory method returns an instance of two different classes and the second class takes two different arguments and either fails or passes
-  the test case based on the arguments.
+  The above factory method returns an instance of two different classes and the second class takes two different arguments and either 
+  fails or passes the test case based on the arguments.
+
+* Retry failed tests -
+  To rerun the failed tests we implement and  use IRetryAnalyzer interface.
+  This interface has retry method which takes the testresult as an argument and reruns the failed testcase.
+  Have two variables retrycount and maxretrycount. If the test execution exceeds max retry count, then 
+  this method will stop the execution and show the result as failure.
+  We can create a listner which will help us in achieving this.
+  To create listner we need to implement IAnnotationTransformer interface and override transform method.
+  To get the code check RetryAnalyser class.
   
+  The only problem with retry analyser is tat it will specify the total number of test cases run as the number of times the 
+  retry analyser has run. To over come this, we can remove duplicate method names using ItestListner and overriding onFinish method.
+  
+  http://www.seleniumeasy.com/testng-tutorials/execute-only-failed-test-cases-using-iretryanalyzer
