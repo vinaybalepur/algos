@@ -1,7 +1,5 @@
 package linkedLists;
 
-import javax.management.RuntimeErrorException;
-
 public class LinkedList 
 {
 	Link first;
@@ -120,5 +118,7 @@ public class LinkedList
 			current = current.next;
 		}
 	}
+	
+	
 
 }
