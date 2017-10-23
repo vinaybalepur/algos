@@ -1,0 +1,19 @@
+To understand Comparator use RunEmployee class.
+To understand Comaparable use UnderstandingComparable class.
+
+* Comparator interface allows us to compare objects and sort them in ascending or descending order.
+* Comparator interface has one method compare(object1, object2)
+* This method takes two arguments and compares values based on these two values.
+* To sort a List we have to use Collections.sort(ListObject,instanceOfClassToBeSorted).
+* We can implement Compare interface in any class and pass the object of the class which has to be sorted.
+  In employees example, we have sorted the employees class by implementing Comparable interface in 
+  CompareOutsideEmployee class and passing an instance of Employee class object.
+* Comparator is better than Comparable interface because of the following -
+  Comparable interface in InHouse, meaning we cannot implement comparable in a outside class and use it for 
+  comparison of another class values which means like we have done in Employees class, we cannot implement
+  Comparison interface  outside Employees class to compare values of Employees class. Comparison interface
+  has to implemented in Employees class only. The reason for this comparison interface, takes current object
+  as one of the arguments and compares this with new value. Since we will not have access to current object
+  outside the class, we cannot use it.
+  Also null values cannot be handled in comparator interface.  
+   
