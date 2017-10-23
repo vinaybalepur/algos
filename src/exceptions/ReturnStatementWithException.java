@@ -6,8 +6,8 @@ public class ReturnStatementWithException
 	public static void main(String[] args) {
 //		String s = getStringWithoutFinally();
 //		System.out.println(s);
-//		String s1 = getStringWithFinally();
-//		System.out.println( s1);
+		String s1 = getStringWithFinally();
+		System.out.println( s1);
 		
 		String s2 = getString();
 		System.out.println( s2);
