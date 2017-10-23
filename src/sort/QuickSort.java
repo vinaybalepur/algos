@@ -18,7 +18,7 @@ public class QuickSort
 		input[5]= 1;
 		input[6]= 40;
 		input[7]= 15;
-		quickSort(0, input.length-1);
+		quickSort(0, input.length);
 //		partition(a, 0, input.length-1);
 //		System.out.println(Arrays.toString(input));
 		
@@ -29,7 +29,7 @@ public class QuickSort
 	static void quickSort(int low, int high) 
 	{
 		System.out.println(Arrays.toString(input));
-	int i = low; int j = high; 
+	int i = low; int j = high-1; 
 	// pivot is middle index 
 	int pivot = input[low + (high - low) / 2]; 
 	System.out.println("Counter " + couter++  + " " + "Pivot " + pivot );
