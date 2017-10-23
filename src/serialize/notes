@@ -14,10 +14,13 @@ the serialized object into a file and we can read data from this file.
 * Serialization in case of static members
    Static members of the class  will not be serialized.
 
-* Serialization of private members
+* Serialization of private and default members
    Since private members are not visible to any other class, we cannot use them after deserialization. i.e in the
    class where we are deserailizing the serialized class, we cannot use the private member.
-
+   Since default  members have package level visibility, we can access these outside the class inside the same package.
+   This means, if we serialilze the class after deserialization, we get to access the default member.
+   Check Employee class for both
+   
 * Serialization version ID. 
 * This is a private static final long value.
 * This has to be unique value.
