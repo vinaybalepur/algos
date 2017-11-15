@@ -13,7 +13,7 @@ public class FactoryWithArgs
 	}
 	
 	@Test
-	public void test1()
+	public void test()
 	{
 		Assert.assertEquals(1, i);
 	}
