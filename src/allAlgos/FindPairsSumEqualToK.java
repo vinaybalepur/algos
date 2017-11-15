@@ -1,9 +1,7 @@
 package allAlgos;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -17,7 +15,7 @@ import java.util.Set;
  * @author vinay
  *
  */
-public class FindPairsEqualToK 
+public class FindPairsSumEqualToK 
 {
 	
 	public static void main(String[] args) 
@@ -25,8 +23,8 @@ public class FindPairsEqualToK
 		int in[] = {8,7,6,5,4,3,2,1};
 		int k = 8;
 		
-//		findPairsUsingHashMap(in, k);
-		findPairsUsingInPlaceSorting(in, k);
+		findPairsUsingHashMap(in, k);
+//		findPairsUsingInPlaceSorting(in, k);
 		
 	}
 	

@@ -1,8 +1,5 @@
 package allAlgos;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-
 public class CyclicLinkedList implements Comparable<Integer>
 {
 	int x;

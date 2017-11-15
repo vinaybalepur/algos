@@ -18,6 +18,7 @@ public class FindPairsWhoseDiffIsEqualToK {
 	        {
 	            if(a[right]-a[left] == k)
 	            {
+	            	System.out.println("(" + a[right] + "," +a[left] + ")");
 	                counter++;
 	                right++;
 	                left++;

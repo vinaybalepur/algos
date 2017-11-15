@@ -1,7 +1,5 @@
 package allAlgos;
 
-import javax.management.RuntimeErrorException;
-
 public class RunLinkedList 
 {
 	public static void main(String[] args) {

@@ -23,12 +23,7 @@ public class CheckIfNumberIsFibonaci
 		}
 		return false;
 	}
-	static String test(String a, String b)
-	{
-		a = a.toLowerCase();
-		b = b.toLowerCase();
-		String r = a+b;
-		return r;
-	}
+	
+	
 
 }
