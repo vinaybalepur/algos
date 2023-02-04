@@ -6,7 +6,7 @@ public class test {
 
 	public static void main(String[] args) {
 		int[] x = { 9, 2, 0,3,4, 5};
-		System.out.println(Arrays.toString(x));
+		//System.out.println(Arrays.toString(x));
 		int low = 0;
 		int high = x.length - 1;
 		quickSort(x, low, high);
